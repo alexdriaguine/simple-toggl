@@ -1,8 +1,9 @@
 import * as path from "path";
 import * as fs from "fs";
+import { homedir } from "os";
 import { promisify } from "util";
 
-const settingsPath = path.resolve(__dirname, "toggl-settings.json");
+const settingsPath = path.resolve(homedir(), ".toggl_settings");
 const readFile = promisify(fs.readFile);
 const writeFile = promisify(fs.writeFile);
 
