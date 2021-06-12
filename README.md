@@ -1,7 +1,6 @@
 # simple-toggl
 
-A pretty simple and bare bones cli for using toggl.  
-[![npm version](https://badge.fury.io/js/simple-toggl.svg)](https://badge.fury.io/js/simple-toggl)
+A pretty simple and bare bones cli for using toggl.
 
 ## Installing
 
@@ -15,7 +14,7 @@ To use simple-toggl, you must provide an api-token. This can be done via the `se
 Information on where you can get your token can be found [here](https://support.toggl.com/en/articles/3116844-where-is-my-api-token-located)
 
 ```sh
-toggle set-token <your-api-token>
+toggl set-token <your-api-token>
 ```
 
 ### (Optional) Project ID
@@ -23,7 +22,7 @@ toggle set-token <your-api-token>
 If you're working on the same project, you can set a default project ID. This way, all your time entries will default to the same project
 
 ```sh
-toggle set-pid <pid>
+toggl set-pid <pid>
 ```
 
 ## Usage
@@ -33,7 +32,7 @@ toggle set-pid <pid>
 Get the current entry if one exists. This is the default comand
 
 ```sh
-toggle
+toggl
 ```
 
 ### todays entries
@@ -41,7 +40,7 @@ toggle
 Get a list of todays entries.
 
 ```sh
-toggle day
+toggl day
 ```
 
 ### start
@@ -49,7 +48,7 @@ toggle day
 Starts a new time entry. Will stop the current entry if one is running.
 
 ```sh
-toggle start my-awesome-task
+toggl start my-awesome-task
 ```
 
 ### stop
@@ -57,7 +56,7 @@ toggle start my-awesome-task
 Stops the currenty entry if one is running
 
 ```sh
-toggle stop
+toggl stop
 ```
 
 ### set-token
@@ -65,7 +64,7 @@ toggle stop
 Sets an api token to authenticate you
 
 ```sh
-toggle set-token <your-api-token>
+toggl set-token <your-api-token>
 ```
 
 ### set-pid
@@ -73,5 +72,5 @@ toggle set-token <your-api-token>
 This is optional. Set a project id for your tasks
 
 ```sh
-toggle set-pid <pid>
+toggl set-pid <pid>
 ```
