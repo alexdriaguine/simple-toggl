@@ -1,6 +1,19 @@
-# simple-toggl
+<p align="center">
+  <a href="https://www.npmjs.com/package/simple-toggl">
+    <img alt="simple-toggl" src="https://user-images.githubusercontent.com/14088342/121914871-f658b680-cd32-11eb-82a6-a9a667303594.png" width="300">
+  </a>
+</p>
 
-A pretty simple and bare bones cli for using toggl.
+<p align="center">
+	A pretty simple and bare-bones cli for using <a href="https://reactnative.dev">Toggl</a>
+</p>
+
+<p align="center">
+  <a href="https://www.npmjs.com/package/simple-toggl"><img src="https://img.shields.io/npm/v/simple-toggl.svg?style=flat-square"></a>
+  <a href="https://github.com/alexdriaguine/toggler"><img src="https://img.shields.io/github/stars/alexdriaguine/toggler?style=flat-square"></a>
+  <a href="https://www.npmjs.com/package/simple-toggl"><img src="https://img.shields.io/npm/dm/simple-toggl.svg?style=flat-square"></a>
+</p>
+
 
 ## Installing
 
