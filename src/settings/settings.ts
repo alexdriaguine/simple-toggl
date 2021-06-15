@@ -24,9 +24,8 @@ interface Settings {
 
 export const getSettings = async (): Promise<Settings> => {
   try {
-    const buffer = await readFile(settingsPath);
-    const settings = buffer.toString();
-    return JSON.parse(settings) as Settings;
+    const hasTokenEnv = process.env.TOGGL_TOKEN;
+    return hasTokenEnv ? getTokenFromProcess() : getTokenFromFile();
   } catch (e) {
     return { token: "" };
   }
