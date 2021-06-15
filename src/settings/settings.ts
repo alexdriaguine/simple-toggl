@@ -7,6 +7,16 @@ const settingsPath = path.resolve(homedir(), ".toggl_settings");
 const readFile = promisify(fs.readFile);
 const writeFile = promisify(fs.writeFile);
 
+const getTokenFromProcess = () => {
+  return { token: process.env.TOGGL_TOKEN || "" };
+};
+
+const getTokenFromFile = async () => {
+  const buffer = await readFile(settingsPath);
+  const settings = buffer.toString();
+  return JSON.parse(settings) as Settings;
+};
+
 interface Settings {
   token: string;
   projectId?: string;

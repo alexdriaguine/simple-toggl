@@ -11,7 +11,7 @@ export const setTokenCommand: CommandModule<{}, SetTokenArgs> = {
   builder: {
     token: {
       type: "string",
-      describe: "A toggle token for API access",
+      describe: "A toggl token for API access",
       demandOption: true,
     },
   },

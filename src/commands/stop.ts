@@ -15,6 +15,6 @@ export const stopCommand: CommandModule = {
     }
 
     const stopped = await togglService.stop(current.data.id);
-    spinner.succeed("Stoped task with name: " + stopped.data?.description);
+    spinner.succeed("Stopped task with name: " + stopped.data?.description);
   },
 };
