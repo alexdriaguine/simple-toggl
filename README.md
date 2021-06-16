@@ -18,7 +18,23 @@
 
 ## Installing
 
+### Using NPM
+
 Install it by running `npm install -g simple-toggl`
+
+### Using Docker
+
+Build the container.
+
+```sh
+docker build . -t simple-toggl
+```
+
+Create an alias to run the container (ex. `.bashrc`). :tada:
+
+```sh
+alias toggl='docker run -e TOGGL_TOKEN=your_toggl_api_token simple-toggl'
+```
 
 ## Set up
 
