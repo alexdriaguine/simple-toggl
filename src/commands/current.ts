@@ -17,9 +17,7 @@ export const currentCommand: CommandModule = {
     }
 
     if (!data) {
-      spinner.fail(
-        "No task running. Start one with toggl start <description>"
-      );
+      spinner.fail("No task running. Start one with toggl start <description>");
       return;
     }
 

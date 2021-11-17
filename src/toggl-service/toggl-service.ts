@@ -45,7 +45,7 @@ async function makeRequest<TResponse>(requestArgs: {
       return { data: data.data };
     }
     return { data };
-  } catch (err) {
+  } catch (err: any) {
     return { error: { status: 500, message: `${err.name}: ${err.mesage}` } };
   }
 }
