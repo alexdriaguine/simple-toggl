@@ -2,6 +2,9 @@ import fetch from "node-fetch";
 import { getSettings } from "../settings";
 import * as querystring from "querystring";
 
+const tokenToBasicAuth = (token: string) =>
+  `Basic ${Buffer.from(`${token}:api_token`).toString("base64")}`;
+
 type Error = { status: number; message: string };
 async function makeRequest<TResponse>(requestArgs: {
   method: "get" | "post" | "put";
@@ -11,21 +14,22 @@ async function makeRequest<TResponse>(requestArgs: {
   try {
     const BASE_URL = "https://api.track.toggl.com/api/v8/";
     const { token } = await getSettings();
-    const basicAuth = `Basic ${Buffer.from(`${token}:api_token`).toString(
-      "base64"
-    )}`;
+    const { endpoint, method } = requestArgs;
+    const url = `${BASE_URL}${endpoint}`;
+    const basicAuth = tokenToBasicAuth(token);
     const body =
-      requestArgs.method !== "get" && requestArgs.body !== undefined
+      method !== "get" && requestArgs.body
         ? JSON.stringify(requestArgs.body)
         : undefined;
-
-    const res = await fetch(`${BASE_URL}${requestArgs.endpoint}`, {
-      method: requestArgs.method,
+    const options = {
+      method,
       body,
       headers: {
         Authorization: basicAuth,
       },
-    });
+    };
+
+    const res = await fetch(url, options);
 
     if (!res.ok) {
       if (res.status === 403) {
